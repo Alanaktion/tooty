@@ -1,15 +1,15 @@
 //
-//  TooterTests.swift
-//  TooterTests
+//  TootyTests.swift
+//  TootyTests
 //
 //  Created by Alan Hardman on 10/31/19.
 //  Copyright © 2019 Alan Hardman. All rights reserved.
 //
 
 import XCTest
-@testable import Tooter
+@testable import Tooty
 
-class TooterTests: XCTestCase {
+class TootyTests: XCTestCase {
 
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
