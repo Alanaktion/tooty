@@ -6,11 +6,11 @@
 //  Copyright © 2019 Alan Hardman. All rights reserved.
 //
 
-import Foundation
+import SwiftUI
 
-struct Toot: Hashable, Identifiable {
-    var id: Int
-    var date: Date
-    var user: User
-    var text: String
+struct Toot: Hashable, Identifiable, Codable {
+    let id: Int
+    let date: Date
+    let user: User
+    let body: String
 }

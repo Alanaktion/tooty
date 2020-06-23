@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct User: Hashable, Identifiable {
+struct User: Hashable, Identifiable, Codable {
     var id: Int
     var name: String
     var handle: String

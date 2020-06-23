@@ -10,11 +10,21 @@ import SwiftUI
 
 struct TimelineView: View {
     var toots: [Toot]
+    
+    @State private var viewIndex = 0
 
     var body: some View {
         VStack {
-            Text("Timeline")
-                .font(.title)
+            HStack {
+                Picker("View", selection: $viewIndex) {
+                    Text("Home").tag(0)
+                    Text("Local").tag(1)
+                    Text("All").tag(2)
+                }.pickerStyle(SegmentedPickerStyle())
+                Button(action: {}) {
+                    Image(systemName: "plus")
+                }
+            }.padding()
             List(toots) { toot in
                 TootRow(toot: toot)
             }
@@ -31,7 +41,7 @@ struct TimelineView_Previews: PreviewProvider {
                 user: User(
                     id: 1, name: "Ken Taylor", handle: "@kentaylor"
                 ),
-                text: "Curabitur pretium tincidunt lacus. Nulla gravida orci a odio. Nullam varius, turpis et commodo pharetra, est eros bibendum elit, nec luctus magna felis sollicitudin mauris."
+                body: "Curabitur pretium tincidunt lacus. Nulla gravida orci a odio. Nullam varius, turpis et commodo pharetra, est eros bibendum elit, nec luctus magna felis sollicitudin mauris."
             ),
             Toot(
                 id: 2,
@@ -39,7 +49,7 @@ struct TimelineView_Previews: PreviewProvider {
                 user: User(
                     id: 1, name: "Ellie Paisley", handle: "@epaisley@mastodon.example"
                 ),
-                text: "Integer in mauris eu nibh euismod gravida. Duis ac tellus et risus vulputate vehicula."
+                body: "Integer in mauris eu nibh euismod gravida. Duis ac tellus et risus vulputate vehicula."
             ),
             Toot(
                 id: 3,
@@ -47,7 +57,7 @@ struct TimelineView_Previews: PreviewProvider {
                 user: User(
                     id: 1, name: "Ellie Paisley", handle: "@epaisley@mastodon.example"
                 ),
-                text: "Donec fermentum."
+                body: "Donec fermentum."
             )
         ])
     }

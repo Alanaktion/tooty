@@ -9,11 +9,18 @@
 import SwiftUI
 
 struct TootRow: View {
+    @ObservedObject var remoteImage: RemoteImage
+    
     var toot: Toot
-
+    
+    init(toot: Toot) {
+        self.toot = toot
+        remoteImage = RemoteImage(urlString: toot.user.avatarUrl ?? nil)
+    }
+    
     var body: some View {
         HStack(alignment: .top) {
-            Image("missing")
+            Image(uiImage: (remoteImage.data.isEmpty) ? UIImage(imageLiteralResourceName: "missing") : UIImage(data: remoteImage.data)!)
                 .resizable()
                 .aspectRatio(contentMode: /*@START_MENU_TOKEN@*/.fill/*@END_MENU_TOKEN@*/)
                 .frame(width: 50, height: 50)
@@ -31,7 +38,7 @@ struct TootRow: View {
                     Text(toot.date.timeAgoShort())
                         .font(.footnote)
                 }
-                Text(toot.text)
+                Text(toot.body)
             }
         }
     }
@@ -45,7 +52,7 @@ struct TootRow_Previews: PreviewProvider {
             user: User(
                 id: 1, name: "June Whitely", handle: "@junewhitely@mastodon.example"
             ),
-            text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+            body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
         ))
     }
 }

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		E777DC76236BE6F80095D804 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E777DC75236BE6F80095D804 /* Functions.swift */; };
+		E7C470812370A8CB0046E5A6 /* RemoteImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C470802370A8CB0046E5A6 /* RemoteImage.swift */; };
+		E7C470842370C1C30046E5A6 /* TootList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C470832370C1C30046E5A6 /* TootList.swift */; };
 		E7F1FB1D236BA73600525168 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F1FB1C236BA73600525168 /* AppDelegate.swift */; };
 		E7F1FB1F236BA73600525168 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F1FB1E236BA73600525168 /* SceneDelegate.swift */; };
 		E7F1FB21236BA73600525168 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F1FB20236BA73600525168 /* ContentView.swift */; };
@@ -21,7 +23,6 @@
 		E7F1FB53236BBB8C00525168 /* Toot.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F1FB52236BBB8C00525168 /* Toot.swift */; };
 		E7F1FB55236BBC6500525168 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F1FB54236BBC6500525168 /* User.swift */; };
 		E7F1FB58236BC3BE00525168 /* Nuke in Frameworks */ = {isa = PBXBuildFile; productRef = E7F1FB57236BC3BE00525168 /* Nuke */; };
-		E7F1FB5A236BC47500525168 /* URLImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F1FB59236BC47500525168 /* URLImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +44,8 @@
 
 /* Begin PBXFileReference section */
 		E777DC75236BE6F80095D804 /* Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
+		E7C470802370A8CB0046E5A6 /* RemoteImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteImage.swift; sourceTree = "<group>"; };
+		E7C470832370C1C30046E5A6 /* TootList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TootList.swift; sourceTree = "<group>"; };
 		E7F1FB19236BA73600525168 /* Tooty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tooty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7F1FB1C236BA73600525168 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E7F1FB1E236BA73600525168 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -61,7 +64,6 @@
 		E7F1FB4F236BB43400525168 /* TootRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TootRow.swift; sourceTree = "<group>"; };
 		E7F1FB52236BBB8C00525168 /* Toot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toot.swift; sourceTree = "<group>"; };
 		E7F1FB54236BBC6500525168 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		E7F1FB59236BC47500525168 /* URLImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E7C470822370AA3D0046E5A6 /* Net */ = {
+			isa = PBXGroup;
+			children = (
+				E7C470802370A8CB0046E5A6 /* RemoteImage.swift */,
+				E7C470832370C1C30046E5A6 /* TootList.swift */,
+			);
+			path = Net;
+			sourceTree = "<group>";
+		};
 		E7F1FB10236BA73600525168 = {
 			isa = PBXGroup;
 			children = (
@@ -113,6 +124,7 @@
 		E7F1FB1B236BA73600525168 /* Tooty */ = {
 			isa = PBXGroup;
 			children = (
+				E7C470822370AA3D0046E5A6 /* Net */,
 				E7F1FB2A236BA73700525168 /* Info.plist */,
 				E7F1FB1C236BA73600525168 /* AppDelegate.swift */,
 				E7F1FB20236BA73600525168 /* ContentView.swift */,
@@ -158,7 +170,6 @@
 			isa = PBXGroup;
 			children = (
 				E7F1FB4F236BB43400525168 /* TootRow.swift */,
-				E7F1FB59236BC47500525168 /* URLImage.swift */,
 			);
 			path = "Supporting Views";
 			sourceTree = "<group>";
@@ -238,7 +249,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1100;
-				LastUpgradeCheck = 1100;
+				LastUpgradeCheck = 1200;
 				ORGANIZATIONNAME = "Alan Hardman";
 				TargetAttributes = {
 					E7F1FB18236BA73600525168 = {
@@ -310,14 +321,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				E7F1FB1D236BA73600525168 /* AppDelegate.swift in Sources */,
+				E7C470842370C1C30046E5A6 /* TootList.swift in Sources */,
 				E7F1FB50236BB43400525168 /* TootRow.swift in Sources */,
 				E777DC76236BE6F80095D804 /* Functions.swift in Sources */,
 				E7F1FB1F236BA73600525168 /* SceneDelegate.swift in Sources */,
+				E7C470812370A8CB0046E5A6 /* RemoteImage.swift in Sources */,
 				E7F1FB53236BBB8C00525168 /* Toot.swift in Sources */,
 				E7F1FB21236BA73600525168 /* ContentView.swift in Sources */,
 				E7F1FB4D236BAE4700525168 /* TimelineView.swift in Sources */,
 				E7F1FB55236BBC6500525168 /* User.swift in Sources */,
-				E7F1FB5A236BC47500525168 /* URLImage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -390,6 +402,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -450,6 +463,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -649,7 +663,7 @@
 			repositoryURL = "https://github.com/kean/Nuke.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 8.3.1;
+				minimumVersion = 9.1.1;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
